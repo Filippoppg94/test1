@@ -23,7 +23,8 @@ $('#submit').click(function(){
             type: JSON,
             data: 'nomeuser='+$nome.val()+'&cognomeuser='+$cognome.val()+'&sesso='+$sesso.val(),
             success: function(data_server){
-                console.log(data_server);
+                var dati=JSON.parse(data_server);
+                console.log(dati);
             }
         })
     }

@@ -9,7 +9,7 @@ if(!$con){
 $host='localhost';
 $user='root';
 $pass='';
-$nome='test1';
+$nome='test1'; 
 
 $conness =new mysqli($host,$user,$pass,$nome);
 if(!$conness){

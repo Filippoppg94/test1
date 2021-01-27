@@ -1,4 +1,4 @@
-$('.containerbottone').hide();
+$('.containerbottone').show();
 $('#registrati').click(function(){
     $('#form').show();
     $('.containerbottone').show();
@@ -16,6 +16,16 @@ $('#submit').click(function(){
     if (contatoremessaggio==1){
         messaggioerrore($vardiv);
     }   
+    } else {
+        $.ajax({
+            url: 'insert.php',
+            method: 'POST',
+            type: JSON,
+            data: 'nomeuser='+$nome.val()+'&cognomeuser='+$cognome.val()+'&sesso='+$sesso.val(),
+            success: function(data_server){
+                console.log(data_server);
+            }
+        })
     }
 })
  
@@ -46,7 +56,10 @@ x.append(messaggio);
 $('#annull').click(function(){  
    $('.containerbottone').fadeOut();
    $('form').fadeOut();
-}) 
+})
+
+
+
 /*
  con javascript
 
